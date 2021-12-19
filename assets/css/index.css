@@ -336,22 +336,27 @@ body {
 .reference-section {
   width: 100%;
   height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("/assets/images/reference-bg.png");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: auto 100%;
+  /*adjust s value for speed*/
+  animation: animatedBackground 500s linear infinite;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 20px 40px;
-  border-bottom: 1px solid #111;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("http://twibbon.s3.amazonaws.com/238/63bb30c8-2649-465e-9df1-ab2f8e5f7ecc.jpg");
-  background-repeat: repeat;
-  background-position: 0 0;
-  background-size: auto 100%;
   color: white; }
   .reference-section .overlay {
-    backdrop-filter: blur(2px);
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 60px 40px;
-    animation: animatedInfiniteBackground 500s linear infinite; }
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); }
   .reference-section .title {
     font-size: 60px;
     font-weight: 200;
@@ -368,7 +373,7 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     padding: 0 10px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300; }
   .reference-section .company-logos {
     display: flex;
@@ -382,7 +387,7 @@ body {
         width: 100%;
         height: auto; }
 
-@keyframes animatedInfiniteBackground {
+@keyframes animatedBackground {
   from {
     background-position: 0 0; }
   /*use negative width if you want it to flow right to left else and positive for left to right*/
@@ -408,91 +413,245 @@ body {
       width: 280px; }
   .reference-section .subtitle {
     font-size: 10px; } }
-.team-section,
-.works-section {
+.reference-desc-section {
   width: 100%;
-  height: 100vh;
-  z-index: -2; }
+  height: 100%;
+  background: #111;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 100px 40px; }
+  .reference-desc-section .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+  .reference-desc-section .title {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 8px;
+    line-height: 60px; }
+  .reference-desc-section .subtitle {
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 5px; }
+  .reference-desc-section .description {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 300; }
+  .reference-desc-section .company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px; }
+    .reference-desc-section .company-logos div {
+      padding: 10px; }
+      .reference-desc-section .company-logos div img {
+        width: 100%;
+        height: auto; }
 
-.team-section {
-  width: 100%;
-  height: 100vh; }
-
-.works-section {
-  width: 100%;
-  height: 100vh; }
-
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0; }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0; } }
 @media (max-width: 991px) {
-  header {
-    padding: 40px; }
-
-  .showcase-section {
-    padding: 40px; }
-    .showcase-section .text h2 {
-      font-size: 2rem;
-      line-height: 2.7rem; }
-    .showcase-section .text h3 {
-      font-size: 1.5rem;
-      line-height: 1.3rem; }
-    .showcase-section .text p {
-      font-size: .8rem; }
-
-  .blender-section .left-content {
-    padding: 20px; }
-    .blender-section .left-content .column-1 {
-      font-size: 10px; }
-    .blender-section .left-content .column-2 {
-      font-size: 70px; }
-    .blender-section .left-content .column-3 {
-      font-size: 10px; }
-  .blender-section .right-content .column-1 {
-    font-size: 60px; }
-  .blender-section .right-content .column-2 {
-    font-size: 13px; }
-  .blender-section .right-content .column-3 {
-    font-size: 12px; }
-
+  .reference-section .overlay {
+    padding: 40px 20px; }
   .reference-section .title {
     font-size: 40px;
     line-height: 40px; }
     .reference-section .title::after {
       width: 340px; }
   .reference-section .subtitle {
-    font-size: 13px; }
-  .reference-section .description {
-    font-size: 12px; } }
+    font-size: 13px; } }
 @media (max-width: 576px) {
-  .blender-section .left-content {
-    padding: 5px; }
-    .blender-section .left-content .column-1 {
-      writing-mode: tb-rl; }
-    .blender-section .left-content .column-2 {
-      font-size: 40px;
-      writing-mode: tb-rl;
-      margin: 14px 0px; }
-    .blender-section .left-content .column-3 {
-      writing-mode: tb-rl; }
-  .blender-section .right-content {
-    padding: 20px 12px; }
-    .blender-section .right-content .column-1 {
-      font-size: 40px;
-      line-height: 50px; }
-    .blender-section .right-content .column-3 {
-      font-size: 10px;
-      padding: 0px; }
+  .reference-desc-section .overlay {
+    padding: 20px 10px; }
+  .reference-desc-section .title {
+    font-size: 30px;
+    line-height: 30px; }
+    .reference-desc-section .title::after {
+      width: 280px; }
+  .reference-desc-section .subtitle {
+    font-size: 10px; }
+  .reference-desc-section .description {
+    font-size: 10px; } }
+.team-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 40px;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111; }
+  .team-section .title {
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 8px;
+    line-height: 60px; }
+  .team-section .subtitle {
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 20px; }
+  .team-section .user-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+  .team-section .user-card {
+    width: 300px;
+    height: 379px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    color: #111;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+    margin: 5px; }
+    .team-section .user-card:hover {
+      color: white; }
+      .team-section .user-card:hover .color {
+        height: 100%; }
+      .team-section .user-card:hover .avatar {
+        width: 100%;
+        height: 100%;
+        top: 0px; }
+        .team-section .user-card:hover .avatar img {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          border-radius: 0; }
+      .team-section .user-card:hover .social {
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.2); }
+        .team-section .user-card:hover .social a {
+          color: white; }
+    .team-section .user-card .color {
+      height: 100px;
+      width: 100%;
+      transition: 0.2s;
+      position: absolute;
+      top: 0; }
+    .team-section .user-card .avatar {
+      width: 100px;
+      height: 100px;
+      z-index: 1;
+      transition: 0.3s;
+      transition-delay: 0.2s;
+      position: absolute;
+      top: 50px;
+      text-align: center; }
+      .team-section .user-card .avatar img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        transition: 0.3s;
+        transition-delay: 0.4s;
+        object-fit: cover; }
+    .team-section .user-card .name-title {
+      width: 100%;
+      height: 120px;
+      text-align: center;
+      top: 175px;
+      position: relative; }
+      .team-section .user-card .name-title span {
+        display: block; }
+      .team-section .user-card .name-title span:nth-child(1) {
+        font-size: 20px;
+        font-weight: 500; }
+      .team-section .user-card .name-title span:nth-child(2) {
+        font-size: 12px;
+        font-weight: 300; }
+    .team-section .user-card .social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      top: 200px; }
+      .team-section .user-card .social li {
+        list-style: none;
+        text-align: center; }
+        .team-section .user-card .social li a {
+          display: inline-block;
+          margin-right: 20px;
+          transform: scale(0.5);
+          transition: 0.5s;
+          background: transparent;
+          margin: 0px 5px;
+          color: #111; }
+          .team-section .user-card .social li a:hover {
+            transform: scale(0.5) translateY(-15px); }
 
-  .reference-section {
-    padding: 5px; }
-    .reference-section .title {
-      font-size: 30px;
-      line-height: 30px; }
-      .reference-section .title::after {
-        width: 280px; }
-    .reference-section .subtitle {
-      font-size: 10px; }
-    .reference-section .description {
-      font-size: 12px; }
-    .reference-section .company-logos {
-      padding: 10px; } }
+@media (max-width: 991px) {
+  .team-section .user-card {
+    width: 240px;
+    height: 300px; }
+    .team-section .user-card .color {
+      height: 70px;
+      width: 100%; }
+    .team-section .user-card .avatar {
+      width: 70px;
+      height: 70px;
+      top: 30px; }
+      .team-section .user-card .avatar img {
+        width: 70px;
+        height: 70px; }
+    .team-section .user-card .name-title {
+      top: 140px;
+      height: 100px; }
+    .team-section .user-card .social {
+      top: 140px; } }
+@media (max-width: 576px) {
+  .team-section {
+    padding: 100px 0px; }
+    .team-section .user-card {
+      width: 150px;
+      height: 250px; }
+      .team-section .user-card .color {
+        height: 40px;
+        width: 100%; }
+      .team-section .user-card .avatar {
+        width: 50px;
+        height: 50px;
+        top: 10px; }
+        .team-section .user-card .avatar img {
+          width: 50px;
+          height: 50px; }
+      .team-section .user-card .name-title {
+        top: 100px;
+        height: 100px; }
+        .team-section .user-card .name-title span:nth-child(1) {
+          font-size: 16px; }
+        .team-section .user-card .name-title span:nth-child(2) {
+          font-size: 10px;
+          font-weight: 300; }
+      .team-section .user-card .social {
+        top: 100px; } }
+.works-section,
+.news-section,
+.contact-section {
+  width: 100%;
+  height: 100vh; }
 
 /*# sourceMappingURL=index.css.map */

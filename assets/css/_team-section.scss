@@ -1,0 +1,204 @@
+        .team-section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 40px;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+            .title {
+                font-size: 60px;
+                font-weight: 200;
+                letter-spacing: 8px;
+                line-height: 60px;
+            }
+            .subtitle {
+                font-weight: 300;
+                font-size: 15px;
+                letter-spacing: 1px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+            .user-cards-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .user-card {
+                width: 300px;
+                height: 379px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                color: #111;
+                border: 1px solid #ddd;
+                transition: 0.2s;
+                margin: 5px;
+                &:hover {
+                    color: white;
+                    .color {
+                        height: 100%;
+                    }
+                    .avatar {
+                        width: 100%;
+                        height: 100%;
+                        top: 0px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            border-radius: 0;
+                        }
+                    }
+                    .social {
+                        z-index: 3;
+                        background: rgba(0, 0, 0, 0.2);
+                        a {
+                            color: white;
+                        }
+                    }
+                }
+                .color {
+                    height: 100px;
+                    width: 100%;
+                    transition: 0.2s;
+                    position: absolute;
+                    top: 0;
+                }
+                .avatar {
+                    width: 100px;
+                    height: 100px;
+                    z-index: 1;
+                    transition: 0.3s;
+                    transition-delay: 0.2s;
+                    position: absolute;
+                    top: 50px;
+                    text-align: center;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        transition: 0.3s;
+                        transition-delay: 0.4s;
+                        object-fit: cover;
+                    }
+                }
+                .name-title {
+                    width: 100%;
+                    height: 120px;
+                    text-align: center;
+                    top: 175px;
+                    position: relative;
+                    span {
+                        display: block;
+                    }
+                    span:nth-child(1) {
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                    span:nth-child(2) {
+                        font-size: 12px;
+                        font-weight: 300;
+                    }
+                }
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    position: relative;
+                    top: 200px;
+                    li {
+                        list-style: none;
+                        text-align: center;
+                        a {
+                            display: inline-block;
+                            margin-right: 20px;
+                            transform: scale(0.5);
+                            transition: 0.5s;
+                            background: transparent;
+                            margin: 0px 5px;
+                            &:hover {
+                                transform: scale(0.5) translateY(-15px);
+                            }
+                            color: #111;
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .team-section {
+                .user-card {
+                    width: 240px;
+                    height: 300px;
+                    .color {
+                        height: 70px;
+                        width: 100%;
+                    }
+                    .avatar {
+                        width: 70px;
+                        height: 70px;
+                        top: 30px;
+                        img {
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+                    .name-title {
+                        top: 140px;
+                        height: 100px;
+                    }
+                    .social {
+                        top: 140px;
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .team-section {
+                padding: 100px 0px;
+                .user-card {
+                    width: 150px;
+                    height: 250px;
+                    .color {
+                        height: 40px;
+                        width: 100%;
+                    }
+                    .avatar {
+                        width: 50px;
+                        height: 50px;
+                        top: 10px;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                    .name-title {
+                        top: 100px;
+                        height: 100px;
+                        span:nth-child(1) {
+                            font-size: 16px;
+                        }
+                        span:nth-child(2) {
+                            font-size: 10px;
+                            font-weight: 300;
+                        }
+                    }
+                    .social {
+                        top: 100px;
+                    }
+                }
+            }
+        }
